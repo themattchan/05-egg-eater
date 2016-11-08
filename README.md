@@ -4,12 +4,6 @@
 
 **DUE Monday 11/14/2016 at 23:59:59**
 
-## TODO
-
-* Haskellify the below
-
-
-
 This assignment implements a compiler for the Egg-eater language, a small
 language with functions, numbers, booleans, and _tuples_.  The name egg-eater
 comes from the fact that tuple syntax with parentheses looks a little bit like
