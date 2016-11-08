@@ -1,4 +1,4 @@
-def link(first, rest)
+def link(first, rest):
   (first, rest)
 
 
