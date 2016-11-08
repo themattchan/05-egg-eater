@@ -182,8 +182,6 @@ Feel free to add additional `Arg` types in `Types.hs`
 to support a broader range of `mov` instructions, if it helps.
 
 
-HEREHEREHERE
-
 Neither `ECX` nor anything beyond the typical `RegOffset` is _required_ to make
 this work, but you may find it interesting to try different shapes of
 generated instructions.
