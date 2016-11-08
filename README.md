@@ -4,6 +4,7 @@
 
 **DUE Monday 11/14/2016 at 23:59:59**
 
+
 This assignment implements a compiler for the Egg-eater language, a small
 language with functions, numbers, booleans, and _tuples_.  The name egg-eater
 comes from the fact that tuple syntax with parentheses looks a little bit like
@@ -51,7 +52,7 @@ expr :=
     [ the same expressions as Diamondback ]
   | (<expr>, <expr>, <expr>, ...)
   | <expr>[<expr>]
-  | istuple(<expr>)
+  | isTuple(<expr>)
 ```
 
 For example:
@@ -180,7 +181,6 @@ accessing the first element of a tuple
 through here; this is _not_ a complete solution.)
 Feel free to add additional `Arg` types in `Types.hs`
 to support a broader range of `mov` instructions, if it helps.
-
 
 Neither `ECX` nor anything beyond the typical `RegOffset` is _required_ to make
 this work, but you may find it interesting to try different shapes of
@@ -364,8 +364,7 @@ Write more functions if you want, as well, and test them out.
 
 ## Recommended TODO List
 
-1. Implement the `ETuple` and `EGetItem` cases in ANF.  The helper `anf_list`
-   has been provided for you to use in the `ETuple` case.
+1. Implement the `Tuple` and `GetItem` cases in ANF.
 2. Get tuple creation and access working for tuples containing two elements,
    testing as you go.  This is very similar to the pairs code from lecture.
 3. Modify the binary and unary operators to handle tuples appropriately (it may
@@ -427,7 +426,7 @@ For example to directly compile and run a string do:
 To run a program whose code is in a file `tests/input/file.egg` do:
 
 ```
-λ> run "nyi" File
+λ> run "file" File
 ```
 
 When you edit your code, instead of having to
@@ -441,14 +440,7 @@ If you wish, use `valgrind` (installed in the lab)
 to help debug your code, for example thus:
 
 ```
-$ make tests/output/nyi.vresult
-```
-
-or in `ghci` as:
-
-```
-λ> vrun "" (Code "1 + 2")
-λ> vrun "nyi" File
+$ make tests/output/file.vresult
 ```
 
 
