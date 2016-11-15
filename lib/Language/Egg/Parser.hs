@@ -50,7 +50,7 @@ expr0 =  try primExpr
      <|> idExpr
 
 exprs :: Parser [Bare]
-exprs = parens (sepBy expr comma)
+exprs = parens (sepBy1 expr comma)
 
 --------------------------------------------------------------------------------
 -- | Individual Sub-Expression Parsers
@@ -67,7 +67,9 @@ getExpr :: Parser Bare
 getExpr = withSpan' (GetItem <$> funExpr <*> brackets expr)
 
 appExpr :: Parser Bare
-appExpr = withSpan' (App <$> (fst <$> identifier) <*> exprs)
+appExpr = withSpan' (App <$> (fst <$> identifier) <*> exprs0)
+  where
+    exprs0 = parens (sepBy expr comma)
 
 funExpr :: Parser Bare
 funExpr = try idExpr <|> tupExpr
