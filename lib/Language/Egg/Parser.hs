@@ -50,7 +50,7 @@ expr0 =  try primExpr
      <|> idExpr
 
 exprs :: Parser [Bare]
-exprs = parens (sepBy1 expr comma)
+exprs = parens (sepBy expr comma)
 
 --------------------------------------------------------------------------------
 -- | Individual Sub-Expression Parsers
